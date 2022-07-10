@@ -1,0 +1,52 @@
+<header>
+    <meta charset="UTF-8">
+    <script  src="./js/DB.js"></script>
+    <script  src="./Js/Cart.js"></script>
+    <script  src="./Js/Menu.js"></script>
+    <script  src="./Js/Recipe.js"></script>
+    <script  src="./Js/Restaurant.js"></script>
+    <script  src="./Js/Catalogue.js"></script>
+</header>
+
+--CHALLENGE 4--<br/>
+Result is displayed in your web browser console.<br/>
+input function can be edit in index.html
+
+
+<script>
+let cart = new Cart();
+let catalogue = new Catalogue();
+var response = catalogue.GetAll();
+
+/* CONSOLE UI PART */
+console.log("Hello choose from the menu");
+response.forEach(function callback(value, index) {
+    console.log(` ID ${index}: ${value.name}`);
+    console.log(`restaurant available`);
+    for (let i = 0; i < value.restaurants.length; i++) {
+        console.log(`ID ${value.restaurants[i]}: restaurant ${RestaurantDB.find(x => x.id === value.restaurants[i]).name }  for a price of ${value.currencys[i]}${value.prices[i]} `);
+    }
+    console.log(` `);
+});
+console.log(`add to cart by adding recipe id and company id to AddItem() in index.html`);
+console.log(``);
+console.log(`[DEBUG LOG]`);
+/* END  CONSOLE UI PART */
+
+cart
+    .AddItem("4", "398") // not valid
+    .AddItem("4", "3") //valid
+    .AddItem("1", "889") // valid
+    .AddItem("4", "398") // valid
+
+    .AddItem("4", "398",
+        (sucess_message) => {
+            console.log(sucess_message);
+        },
+        (fail_message) => {
+            console.log(fail_message);
+        },
+    ) // not valid  with response 
+
+    .showBill();
+</script>
