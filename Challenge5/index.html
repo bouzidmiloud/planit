@@ -1,0 +1,54 @@
+<header>
+    <meta charset="UTF-8">
+    <script  src="./js/ContactList.js"></script>
+</header>
+<script>
+
+var originalList = 
+`[
+    {
+        "id" : "1",
+        "name" : "jhon",
+        "dob" : "2/1/1997",
+        "nationality" : "FR",
+        "country" : "FR"
+    },
+    {
+        "id" : "3",
+        "name" : "samantha",
+        "dob" : "1/6/2011",
+        "nationality" : "EN",
+        "country" : "US"
+    },
+    {
+        "id" : "93",
+        "name" : "pikachu",
+        "dob" : "1/6/1960",
+        "nationality" : "JP",
+        "country" : "IT"
+    },
+    {
+        "id" : "2",
+        "name" : "jhon",
+        "dob" : "2/1/2022",
+        "nationality" : "US",
+        "country" : "IT"
+    },
+    {
+        "id" : "94",
+        "name" : "PikaChu",
+        "dob" : "1/6/2019",
+        "nationality" : "JP",
+        "country" : "IT"
+    }
+]`;
+
+
+var contactlist = new ContactList();
+contactlist.parse(originalList)
+.getListOfDuplicatePerson()
+.getAverageAge()
+.getPersonsbyAgeLessThan(30)
+.getListOfUniquePerson()
+.getCountryList();
+</script>
