@@ -8,5 +8,5 @@ Challenge 4 - <br/>
 Challenge 5 - <br/>
 1 - Open Index.html on a web browser<br/>
 2 - inspect the result in console.<br/>
-3-  function are called in index.html.
+3-  function are called in index.html..<br/>
 4 - list of person (json data) can be edited and are located un index.html<br/>
