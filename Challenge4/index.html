@@ -34,10 +34,10 @@ console.log(`[DEBUG LOG]`);
 /* END  CONSOLE UI PART */
 
 cart
-    .AddItem("4", "398") // not valid
-    .AddItem("4", "3") //valid
-    .AddItem("1", "889") // valid
-    .AddItem("4", "398") // valid
+    .AddItem("4", "398")
+    .AddItem("4", "3")
+    .AddItem("1", "889")
+    .AddItem("4", "398")
 
     .AddItem("4", "398",
         (sucess_message) => {
@@ -46,7 +46,7 @@ cart
         (fail_message) => {
             console.log(fail_message);
         },
-    ) // not valid  with response 
+    ) 
 
     .showBill();
 </script>
